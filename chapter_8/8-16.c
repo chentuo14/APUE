@@ -9,8 +9,8 @@ int main(void)
 
 	if((pid = fork()) < 0) {
 		err_sys("fork error");
-	} else if (pid = 0) {
-		if(execle("/home/myfly2/bin/echoall", "echoall", "myarg1", 
+	} else if (pid == 0) {
+		if(execle("echoall", "echoall", "myarg1", 
 					"MY ARG2", (char *)0, env_init) < 0)
 			err_sys("execle error");
 	}
