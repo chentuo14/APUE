@@ -1,6 +1,7 @@
 #include "apue.h"
 #include <errno.h>
 #include <fcntl.h>
+#include "../chapter_3/3-12.c"
 
 char buf[500000];
 
