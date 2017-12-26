@@ -58,7 +58,7 @@ int tty_raw(int fd)
 
 	buf.c_lflag &= ~(ECHO|ICANON|IEXTEN|ISIG);
 
-	buf.c_iflag &= ~(BRKINT|IICRNL|INPCK|ISTRIP|IXON);
+	buf.c_iflag &= ~(BRKINT|ICRNL|INPCK|ISTRIP|IXON);
 
 	buf.c_cflag &= ~(CSIZE|PARENB);
 
