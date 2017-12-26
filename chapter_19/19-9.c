@@ -14,9 +14,9 @@ int ptym_open(char *pts_name, int pts_namesz)
 		return(-1);
 	if(grantpt(fdm) < 0)
 		goto errout;
-	if(unlock(fdm) < 0)
+	if(unlockpt(fdm) < 0)
 		goto errout;
-	if((ptr = ptsname(fmd)) == NULL)
+	if((ptr = ptsname(fdm)) == NULL)
 		goto errout;
 
 	strncpy(pts_name, ptr, pts_namesz);
@@ -34,7 +34,6 @@ int ptys_open(char *pts_name)
 	int fds;
 #if defined(SOLARIS)
 	int err, setup;
-#endif
 
 	if((fds = open(pts_name, O_RDWR)) < 0)
 		goto errout; 

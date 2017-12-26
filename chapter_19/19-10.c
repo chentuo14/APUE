@@ -1,5 +1,6 @@
 #include "apue.h"
 #include <termios.h>
+#include "19-9.c"
 
 pid_t pty_fork(int *ptrfdm, char *slave_name, int slave_namesz,
 		const struct termios *slave_termios,
